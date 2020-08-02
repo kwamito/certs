@@ -1,0 +1,65 @@
+{% extends 'cate/base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'cate/home.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="formd">
+    <form enctype="multipart/form-data" method="POST" novalidate>
+        {% csrf_token %}
+        <input type="file" name="file_button" class="btn btn-primary" id="file">
+        <div id="in">
+            <input type="submit" class="btn btn-dark" id="sub-but">
+        </div>
+    </form>
+</div>
+<div class="parent">
+    <div class="ui statistics">
+        <div class="statistic">
+            <div class="label">
+                Trainees
+            </div>
+            <div class="value">
+                {{num}}
+            </div>
+        </div>
+
+        <div class="statistic">
+            <div class="value">
+                {{num_files}}
+            </div>
+            <div class="label">
+                Files
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="container">
+    {% for file in files %}
+    <div class="row">
+        {{file}}
+        <div id="icons">
+    <span id="spano">
+      
+      {% if file.uploaded %}
+      <button type="submit" class="trans" value={{file}}>
+      <i class="check icon"></i>
+      </button>
+      {% else %}
+      <button type="submit" class="trans" value={{file}}>
+      <i class="upload icon"></i>
+      </button>
+      {% endif %}
+      
+    </span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

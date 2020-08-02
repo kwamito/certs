@@ -1,0 +1,32 @@
+{% extends 'cate/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'cate/home.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="marg">
+        <form action="" method="POST" id="login-form">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <center>
+                <button class="ui secondary button" id="buut" style="margin-top: 40px;">Submit</button>
+                <div class="content" style="margin-top: 20px;">
+                    <div class="parent">
+
+                    </div>
+                    <div>
+                        <small class="text-muted">
+                            Need an account? <a class="ml-2" href="#">Sign Up</a>
+                        </small>
+                    </div>
+                </div>
+            </center>
+        </form>
+    </div>
+</div>
+{% endblock %}

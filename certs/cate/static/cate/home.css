@@ -1,0 +1,44 @@
+.parent{
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.row{
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color: chocolate;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#icons{
+    float: right;
+    grid-column: 12;
+    
+}
+
+.spano{
+    float: right;
+    grid-column: 8/12;
+}
+
+.trans{
+    background-color: transparent;
+    border: none;
+}
+
+#file{
+    width: 200px;
+}
+
+.formd{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.formd form{
+    grid-column: 8/12;
+    margin-top: 20px;
+}
